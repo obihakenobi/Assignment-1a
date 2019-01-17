@@ -55,13 +55,13 @@ float hst = subTotal * 0.13;
 float amountDue = subTotal + hst;
 
 printf("-------------------------------------------------------\n"); 
-printf("Sub Total                               = $%0.2f\n", subTotal);
+printf("Sub Total                                = $%0.2f\n", subTotal);
 
-printf("HST                                     = $%0.2f\n", hst);
+printf("HST                                      = $%0.2f\n", hst);
 
 printf("=======================================================\n");
 
-printf("Amount Due         = $%0.2f\n", amountDue);
+printf("Amount Due                               = $%0.2f\n\n", amountDue);
 
 
 return(0);
