@@ -9,7 +9,6 @@ int main(){
 char ArrayOne[100];
 int highestNumber = 0;
 
-
 int numZero  = 0;
 int numOne   = 0;
 int numTwo   = 0; 
@@ -22,6 +21,8 @@ int numEight = 0;
 int numNine  = 0;
 
 
+
+//STAGE 1 - Generate Random Numbers
 
 srand(time(NULL));
 for(int i = 0; i < MAX_NUMBER; i++){
@@ -66,66 +67,54 @@ for (int j = 0; j < sizeof(ArrayOne); j++){
     }
 }
 
+//STAGE 2 = NUMBERS IN SECOND ARRAY
+
+//ArrayTwo Contains the number of times the numbers:(0 - 9) were generated
 char ArrayTwo[MAX_HISTOGRAM] = {numZero, numOne, numTwo, numThree, numFour, numFive, numSix, numSeven, numEight, numNine};
 
-printf("\n\n");
 
+printf("\n");
 
 for(int i = 0; i < sizeof(ArrayTwo)/sizeof(ArrayTwo[0]); i++){
     //find the highest number from the Array
     if(highestNumber <= ArrayTwo[i]){highestNumber = ArrayTwo[i];}
 }
 
-// printf("Highest Number : %d", highestNumber);
+
+printf("\n");
 
 
-
-
-//Create the Hisgraph
+//STAGE 3 = CREATE HISTOGRAM 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 for(int i = 0; i < highestNumber; i++){
+    
     printf("%-2d|", highestNumber - i);
+    
+    for(int j = 0; j < (sizeof(ArrayTwo)/sizeof(ArrayTwo[0])); j++){
+        
 
-    for(int j = 0; j < 9; j++){
-        printf(" * ");
+        if((highestNumber - i) <= ArrayTwo[j]){
+            printf(" * ");
+        }else{
+            printf("   ");
+        }
+        
     }
     printf("\n");
-    
 }
 
 printf("   ");
-
-for(int i = 0; i < 9; i++){
-    printf(" - ");
+for(int i = 0; i < (sizeof(ArrayTwo)/sizeof(ArrayTwo[0])); i++){
+    printf("___");
 }
-
 printf("\n");
 printf("   ");
-
-for(int i = 0; i < 9; i++){
+for(int i = 0; i < (sizeof(ArrayTwo)/sizeof(ArrayTwo[0])); i++){
     printf(" %d ", i);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-printf("\n\n");
-
-
-
+printf("\n");
 
 return (0);
 
