@@ -68,6 +68,23 @@ for (int j = 0; j < sizeof(ArrayOne); j++){
 
 char ArrayTwo[MAX_HISTOGRAM] = {numZero, numOne, numTwo, numThree, numFour, numFive, numSix, numSeven, numEight, numNine};
 
+
+
+printf("%d,",numZero);
+printf("%d,",numOne);
+printf("%d,",numTwo);
+printf("%d,",numThree);
+printf("%d,",numFour);
+printf("%d,",numFive);
+printf("%d,",numSix);
+printf("%d,",numSeven);
+printf("%d,",numEight);
+printf("%d,",numNine);
+
+
+
+
+
 printf("\n\n");
 
 
@@ -81,14 +98,21 @@ for(int i = 0; i < sizeof(ArrayTwo)/sizeof(ArrayTwo[0]); i++){
 
 
 
-//Create the Hisgraph
-
+//Create the Histograph
 
 for(int i = 0; i < highestNumber; i++){
-    printf("%-2d|", highestNumber - i);
+    printf("%-3d|", highestNumber - i);
 
     for(int j = 0; j < 9; j++){
-        printf(" * ");
+        // printf(" * ");
+
+        if(highestNumber - j <= ArrayTwo[1]){
+            printf(" . ");
+        }else{
+            printf("   ");
+        }
+
+       
     }
     printf("\n");
     
@@ -96,16 +120,20 @@ for(int i = 0; i < highestNumber; i++){
 
 printf("   ");
 
-for(int i = 0; i < 9; i++){
-    printf(" - ");
+for(int i = 0; i <= 9; i++){
+    printf("___");
 }
 
 printf("\n");
-printf("   ");
+printf("    ");
 
-for(int i = 0; i < 9; i++){
+// printf("  *  ");
+
+for(int i = 0; i <= 9; i++){
     printf(" %d ", i);
 }
+
+
 
 
 
