@@ -5,8 +5,9 @@ int main(){
 
 int fixedBars = 48;
 
-int ohHenryBars, CoffeeCrispBars, aeroBars, Smarties, crunchieBars;
+int ohHenryBars, CoffeeCrispBars, aeroBars, Smarties, crunchieBars = 0;
 
+//FIXED COST for all chocolate bars
 float fixedCostHenry = 0.65;
 float fixedCostCoffeeCrisp = 0.80;
 float fixedCostAero = 0.60;
@@ -19,7 +20,7 @@ printf("3. Aero                 $0.60\n");
 printf("4. Smarties             $0.70\n");
 printf("5. Crunchie             $0.75\n");
 
-
+//The user types in the number of chocolate bars they want 
 printf("How many boxes of Oh Henry bars would you like (48 bars per box) ?\n");
 scanf("%d", &ohHenryBars);
 float henryCost = ohHenryBars * (fixedCostHenry * fixedBars);
@@ -47,7 +48,7 @@ printf("%-5d boxes of Aero        ($0.60 x 48)  = $%0.2f\n", aeroBars , aeroBars
 printf("%-5d boxes of Smarties    ($0.70 x 48)  = $%0.2f\n", Smarties, SmartiesCost);
 printf("%-5d boxed of Crunchie    ($0.75 x 48)  = $%0.2f\n", crunchieBars, crunchieBarsCost);
 
-
+//TOTAL price of purchaed chocolate bars
 float subTotal = henryCost + CoffeeCrispCost + aeroBarsCost + SmartiesCost + crunchieBarsCost;
 
 float hst = subTotal * 0.13;
